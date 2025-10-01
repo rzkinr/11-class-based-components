@@ -17,6 +17,12 @@ class Users extends Component {
     };
   }
 
+  componentDidUpdate() {
+    if (this.props.users.length === 0) {
+      throw Error("No users provided!");
+    }
+  }
+
   toggleUsersHandler() {
     // this.state.showUsers = flase; //Wrong!!
     this.setState((curState) => {
